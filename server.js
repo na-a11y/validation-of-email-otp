@@ -37,7 +37,7 @@ app.post('/send-otp', async (req, res) => {
       from: process.env.EMAIL_USER,
       to: email,
       subject: 'Your OTP for Verification',
-      text: Your OTP (One Time Password) is: ${otp}
+      text: `Your OTP (One Time Password) is: ${otp}`
     };
 
     // Send email using Nodemailer
@@ -54,7 +54,18 @@ app.post('/send-otp', async (req, res) => {
   }
 });
 
+app.post('/verify-otp', (req, res) => {
+  const { email, otp } = req.body;
+
+  // Check if email and otp match the dummy user data
+  if (email === email && otp === otp) {
+      return res.json({ message: 'OTP verified successfully' });
+  } else {
+      return res.json({ message: 'Invalid OTP. Please try again.' });
+  }
+});
+
 // Start the server
 app.listen(port, () => {
-  console.log(Server is running on http://localhost:${port});
+  console.log(`Server is running on http://localhost:${port}`);
 });
