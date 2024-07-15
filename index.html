@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Registration Form</h2>
+      <form id="registrationForm">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" />
+        <span class="error-message" id="fullNameError"></span>
+
+        <label for="email">Email ID:</label>
+        <input type="email" id="email" name="email" />
+        <span class="error-message" id="emailError"></span>
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel" id="mobile" name="mobile" />
+        <span class="error-message" id="mobileError"></span>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" />
+        <span class="error-message" id="usernameError"></span>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" />
+        <span class="error-message" id="passwordError"></span>
+
+        <button type="button" onclick="registerUser()">Submit</button>
+      </form>
+
+      <!-- OTP Section -->
+      <div id="otpSection" style="display: none">
+        <label for="otp">Enter OTP:</label>
+        <input type="text" id="otp" name="otp" />
+        <span class="error-message" id="otpError"></span>
+        <button type="button" onclick="validateOTP()">Validate OTP</button>
+      </div>
+
+      <p id="message"></p>
+      <button
+        id="showTableButton"
+        style="display: none"
+        onclick="redirectToUserTable()"
+      >
+        Show Registered Users
+      </button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
