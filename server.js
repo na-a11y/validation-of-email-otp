@@ -9,9 +9,7 @@ const port = process.env.PORT || 3000;
 
 // Middleware to parse JSON request bodies
 app.use(express.json());
-app.use(cors({
-  origin: ['http://127.0.0.1:5500']
-}));
+app.use(cors());
 // Nodemailer configuration
 
 
